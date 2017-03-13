@@ -5,5 +5,14 @@ git_prompt_info() {
     echo " %{$fg_bold[green]%}$current_branch%{$reset_color%}"
   fi
 }
+
+punctualPrompt () {
+    echo -n "%(?.%{$reset_color%}.%{$fg[red]%})";
+    echo -n "→";
+    echo -n "%{$reset_color%}";
+    echo -n ' ';
+}
+
 setopt promptsubst
-PS1='${SSH_CONNECTION+"%{$fg_bold[green]%}%n@%m:"}%{$fg_bold[blue]%}%c%{$reset_color%}$(git_prompt_info) %# '
+PS1='${SSH_CONNECTION+"%{$fg_bold[green]%}%n@%m:"}%{$fg_bold[blue]%}%c%{$reset_color%}$(git_prompt_info) $(punctualPrompt)'
+

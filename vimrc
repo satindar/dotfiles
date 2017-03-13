@@ -12,6 +12,7 @@ set incsearch     " do incremental searching
 set laststatus=2  " Always display the status line
 set autowrite     " Automatically :write before running commands
 set relativenumber
+set smartcase
 
 nmap 0 ^
 nmap <leader>vi :tabe ~/.vimrc<cr>
